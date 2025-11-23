@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  gemini-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data:/app/data
+      - ./cache:/app/cache
+    environment:
+      - CONFIG_SERVER__API_KEY=AIzaSyAR_0QVucXlAd6pJYEMB1Ne9tRo6v1NlOO
+      - CONFIG_GEMINI__CLIENTS__0__ID=client-a
+      - CONFIG_GEMINI__CLIENTS__0__SECURE_1PSID=g.a0003wgDVGYtRhEwrf4vY2kaMJ3moP0mItC3qjneYuhAA-9odMFHAP2I0QdS41-wdgZi3hfl-AACgYKAcASARMSFQHGX2Mim_1wZV_RrgXl6UijeaY2UxoVAUF8yKqJ6Cn8X10bP63VjAflUYB40076
+      - CONFIG_GEMINI__CLIENTS__0__SECURE_1PSIDTS=sidts-CjIBwQ9iI-i9721xasgidSnnhEG255_PutyY_o9SGQZr6YYiuWNXZwbWZubwfZRWwKSHhhAA
+      - GEMINI_COOKIE_PATH=/app/cache
